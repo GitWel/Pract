@@ -1,0 +1,62 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+#include <ctime>
+using namespace std;
+
+double *sozdan(int size) {                    
+		double *array = new double[size];
+		return array;
+	}
+	double *zapoln(double *array, int size,int a) {      
+		cout << "Хотите заполнить самостоятельно?(Да-1/Нет-2)" << endl;
+		cin >> a;
+		if (a == 1) {
+			for (int i = 0; i < size; i++) {
+				cin >> array[i];
+			}
+			return array;
+		}
+		else {
+			for (int i = 0; i < size; i++) {
+				array[i]=rand()%10;
+			}
+			return array;
+		}
+	}
+	void vivod(double *array, int size) {           
+		for (int i = 0; i < size; i++) {
+			cout<<"array["<<i<<"] = "<<array[i]<<endl;
+		}
+	}
+	double *osvob(double *array) {                
+		delete[]array;
+		return array;
+	}
+
+int main() {
+  srand(time(0));
+	setlocale(LC_ALL, "Russian");
+	int a=0;
+	string again = "Да";
+	int size = 0;
+	while (again == "Да") {
+		system("cls");
+		cout << "Введите размер массива"<<endl;
+		cin >> size;
+		double *array;
+		array = sozdan(size);
+		cout << "Заполнение массива данными" << endl;
+		array=zapoln(array, size, a);
+		cout << "Созднанный массив" << endl;
+		vivod(array, size);
+		cout << "Удаление массива" << endl;
+		array = osvob(array);
+		cout << "Хотите создать новый массив?" << endl;
+		cin >> again;
+	}
+	
+
+	system("pause");
+	return 0;
+}
