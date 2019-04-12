@@ -1,0 +1,49 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Screen{
+protected:
+	int diagonal;
+	int resolution;
+};
+
+class Keyboard {
+protected:
+	int number_of_keys;
+};
+
+
+class Notebook :public Screen, public Keyboard{
+public:
+	string model;
+	Notebook (string a, int b, int c, int d) {
+		model = a;
+		diagonal= b;
+		resolution = c;
+		number_of_keys = d;
+	}
+};
+
+class Computer :public Screen, public Keyboard {
+public:
+	string model;
+	Computer(string a, int b, int c, int d) {
+		model = a;
+		diagonal = b;
+		resolution = c;
+		number_of_keys = d;
+	}
+};
+
+class Phone :public Screen, public Keyboard {
+public:
+	string model;
+	Phone(string a, int b, int c, int d) {
+		model = a;
+		diagonal = b;
+		resolution = c;
+		number_of_keys = d;
+	}
+};
