@@ -1,0 +1,182 @@
+#include "pch.h"
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Fun {
+public:
+	virtual void return_Fun() = 0;
+	virtual void res(double x) = 0;
+	virtual void dx() = 0;
+	virtual Fun* copy() = 0;
+};
+
+class Const: public Fun {
+public:
+	void return_Fun() {
+		cout << "f(x) = const" << endl;
+	}
+	void res(double x) {
+		return 1;
+	}
+	void dx() {
+		cout << "f'(x) = 0" << endl;
+	}
+	Fun* copy() {
+		Fun* f = new Const;
+		return f;
+	}
+};
+
+class Var : public Fun {
+public:
+	void return_Fun() {
+		cout << "f(x) = x" << endl;
+	}
+	void res(double x) {
+		return x;
+	}
+	void dx() {
+		cout << "f'(x) = 1" << endl;
+	}
+	Fun* copy() {
+		Fun* f = new Var;
+		return f;
+	}
+};
+
+class Summ : public Fun {
+public:
+	void return_Fun() {
+		cout << "f(x) = x^3+3" << endl;
+	}
+	void res(double x) {
+		return x*x*x+3*x;
+	}
+	void dx() {
+		cout << "f'(x) = 3*x^2" << endl;
+	}
+	Fun* copy() {
+		Fun* f = new Summ;
+		return f;
+	}
+};
+
+class Dif : public Fun {
+public:
+	void return_Fun() {
+		cout << "f(x) = 2*x^3-x" << endl;
+	}
+	void res(double x) {
+		return 2*x*x*x - x;
+	}
+	void dx() {
+		cout << "f'(x) = 6*x^2 -1" << endl;
+	}
+	Fun* copy() {
+		Fun* f = new Dif;
+		return f;
+	}
+};
+
+class Multi : public Fun {
+public:
+	void return_Fun() {
+		cout << "f(x) = 2*x*(2*x+5)" << endl;
+	}
+	void res(double x) {
+		return 2 * x*(2 * x + 5);
+	}
+	void dx() {
+		cout << "f'(x) = (4*x+20) + 4x" << endl;
+	}
+	Fun* copy() {
+		Fun* f = new Multi;
+		return f;
+	}
+};
+
+class Div : public Fun {
+public:
+	void return_Fun() {
+		cout << "f(x) =(2*x+x*x)/(3*x-2)" << endl;
+	}
+	void res(double x) {
+		return (2 * x + x * x) / (3 * x - 2);
+	}
+	void dx() {
+		cout << "f'(x) = (3*x*x-4*x-4)/(3*x-2)^2" << endl;
+	}
+	Fun* copy() {
+		Fun* f = new Div;
+		return f;
+	}
+};
+
+class Sin : public Fun {
+public:
+	void return_Fun() {
+		cout << "f(x) =sin(x)" << endl;
+	}
+	void res(double x) {
+		return sin(x);
+	}
+	void dx() {
+		cout << "f'(x) = cos(x)" << endl;
+	}
+	Fun* copy() {
+		Fun* f = new Sin;
+		return f;
+	}
+};
+
+class Cos : public Fun {
+public:
+	void return_Fun() {
+		cout << "f(x) =cos(x)" << endl;
+	}
+	void res(double x) {
+		return cos(x);
+	}
+	void dx() {
+		cout << "f'(x) = -sin(x)" << endl;
+	}
+	Fun* copy() {
+		Fun* f = new Cos;
+		return f;
+	}
+};
+
+class Exp : public Fun {
+public:
+	void return_Fun() {
+		cout << "f(x) =exp(x)" << endl;
+	}
+	void res(double x) {
+		return exp(x);
+	}
+	void dx() {
+		cout << "f'(x) = exp(x)" << endl;
+	}
+	Fun* copy() {
+		Fun* f = new Exp;
+		return f;
+	}
+};
+
+class Ln : public Fun {
+public:
+	void return_Fun() {
+		cout << "f(x) =Ln(x)" << endl;
+	}
+	void res(double x) {
+		return log(x);
+	}
+	void dx() {
+		cout << "f'(x) = 1/x" << endl;
+	}
+	Fun* copy() {
+		Fun* f = new Ln;
+		return f;
+	}
+};
