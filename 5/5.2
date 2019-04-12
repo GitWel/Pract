@@ -1,0 +1,41 @@
+#include "pch.h"
+#include <iostream>
+using namespace std;
+
+void sort(int* array, int size) {
+	int min;
+	for (int i = 0; i < size; i++){
+		min = i;
+		for (int j = i + 1; j < size; j++) {
+			if (array[j] < array[min])  min = j; 
+		}
+		swap(array[i], array[min]);
+	}
+	cout << "Sort(int):" << endl;
+	for (int i = 0; i < size; i++)
+		cout << "array[" << i << "]=" << array[i] << " ";
+}
+void sort(double* array, int size) {
+	int min;
+	for (int i = 0; i < size-1; i++) {
+		min = i;
+		for (int j = i + 1; j < size; j++) {
+			if (array[j] < array[min])  min = j; 
+		}
+		swap(array[i], array[min]);
+	}
+	cout << "Sort(double):" << endl;
+	for (int i = 0; i < size; i++)
+		cout <<"array["<<i<<"]="<< array[i] <<" ";
+}
+
+int main() {
+	int size = 10;
+	int Int_a[10] = { 4, 5, 6, 8, 3, 7, 2, 1, 9, 10 };
+	double Double_a[10] = { 9.54, 8.234, 6.0, 1.144, 5.5, 2, 3, 4.444, 7, 10 };
+	sort(Int_a, size);
+	sort(Double_a, size);
+
+	system("pause");
+	return 0;
+}
