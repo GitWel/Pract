@@ -1,0 +1,39 @@
+#include "pch.h"
+#include <iostream>
+#include<ctime>
+using namespace std;
+
+int **zapoln(int **array, int stolb, int strok) {     
+		for (int i = 0; i < strok; i++) {
+			for (int j = 0; j < stolb; j++) {
+				array[i][j] = rand() % 40 + 10;
+			}
+		}
+			return array;
+}
+
+
+	void vivod(int **array, int stolb, int strok) {           
+		for (int i = 0; i < strok; i++) {
+			for (int j = 0; j < stolb; j++) {
+				cout << "array[" << i << "][" << j << "] = " << array[i][j]<<"   ";
+			}
+			cout << endl;
+		}
+	}
+
+int main() {
+	srand(time(0));
+	setlocale(LC_ALL, "Russian");
+	int strok, stolb;
+	cout << "Введите количество строк и столбцов" << endl;
+	cin >> strok >> stolb;
+	int **array = new int*[strok];         
+	for (int i = 0; i < strok; i++) {     
+		array[i] = new int[stolb];      
+	}
+	array = zapoln(array, stolb, strok);
+	vivod(array, stolb, strok);
+	system("pause");
+	return 0;
+}
