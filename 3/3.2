@@ -1,0 +1,19 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Students {
+	string №;
+	int number_of_students;
+	string stud[10];
+};
+
+ int main(){
+         setlocale(LC_ALL, "Russian");
+	 Students group1{ "ИНБО-03-18",10,{"Семин Илья","Жигалов Августин","Анисимов Алексей"} };
+	 cout << group1.№;
+
+	 system("pause");
+	 return 0;
+ }
