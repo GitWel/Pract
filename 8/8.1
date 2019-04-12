@@ -1,0 +1,25 @@
+#include "pch.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "Russian");
+	ifstream qupa;
+	qupa.open("file.txt");
+	if (qupa.is_open()) {
+		string a;
+		while (!qupa.eof()) {
+			qupa >> a;
+			cout << a << endl;
+		}
+		qupa.close();
+	}
+	else {
+		cout << "Файл отсутствует" << endl;
+	}
+
+	system("pause");
+	return 0;
+}
