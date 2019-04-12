@@ -1,0 +1,39 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Sredstvo{
+protected:
+	string mark;
+	int date;
+	int number_of_seats;
+};
+
+
+class Car : public Sredstvo {
+public:
+	Car(string a, int b, int c) {
+		mark = a;
+		date = b;
+		number_of_seats = c;
+	}
+};
+
+class Bus :public Sredstvo {
+public:
+	Bus(string a, int b, int c) {
+		mark = a;
+		date = b;
+		number_of_seats = c;
+	}
+};
+
+class Bicycle :public Sredstvo {
+public:
+	Bicycle(string a, int b, int c) {
+		mark = a;
+		date = b;
+		number_of_seats = c;
+	}
+};
