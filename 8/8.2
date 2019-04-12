@@ -1,0 +1,19 @@
+#include "pch.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "Russian");
+	ofstream qupa;
+	qupa.open("file.txt");
+	string c;
+	cout<<"Введите текст:"<<endl;
+	getline(cin, c);
+	qupa << c;
+	qupa.close();
+
+	system("pause");
+	return 0;
+}
