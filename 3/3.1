@@ -1,0 +1,18 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Book {
+	string name;
+	string author;
+	int date;
+	int pages;
+};
+
+ int main(){
+	Book book1 = { "Anna Karenina","Lev Tolstoy",1877,850 };
+	cout << book1.name<<endl;
+	system("pause");
+	return 0;
+ }
