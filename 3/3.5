@@ -1,0 +1,37 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Book {
+	string name;
+	string author;
+	int date;
+	int pages;
+};
+
+struct Biblio {
+	string name;
+	Book books[3];
+};
+
+int main() {
+        setlocale(LC_ALL, "Russian");
+	Biblio bib;
+	cout << "Введите название библиотеки" << endl;
+	cin >> bib.name;
+	for (int i = 0; i < 3; i++) {
+		cout << "Введите название "<<i+1<<" книги, автора, дату публикации, количество страниц" << endl;
+		cin >> bib.books[i].name;
+		cin >> bib.books[i].author;
+		cin >> bib.books[i].date;
+		cin >> bib.books[i].pages;
+	}
+	
+	for (int i = 0; i < 3; i++) {
+		cout <<i+1<<" книга - "<< bib.books[i].name<<endl;
+	}
+
+	system("pause");
+	return 0;
+}
