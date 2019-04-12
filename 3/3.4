@@ -1,0 +1,27 @@
+#include "pch.h"
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+struct Coord {
+	float x;
+	float y;
+};
+
+struct Vector {
+	Coord №1;
+	Coord №2;
+};
+
+ int main(){
+         setlocale(LC_ALL, "Russian");
+	 Vector vec1;
+	 cout << "Введите координаты первой точки" << endl;
+	 cin >> vec1.№1.x>>vec1.№1.y;
+	 cout << "Введите координаты второй точки" << endl;
+	 cin >> vec1.№2.x >> vec1.№2.y;
+	 cout << "Длина вектора = " << sqrt(pow((vec1.№2.x) - (vec1.№1.x), 2) + pow((vec1.№2.y) - (vec1.№1.y), 2));
+
+	 system("pause");
+	 return 0;
+ }
