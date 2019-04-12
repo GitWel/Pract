@@ -1,0 +1,49 @@
+#include "pch.h"
+#include <iostream>
+using namespace std;
+
+int summ(int a, int b) {
+	return a + b;
+}
+int multi(int a, int b) {
+	return a * b;
+}
+int dif(int a, int b) {
+	return a - b;
+}
+int divis(int a, int b) {
+	if (b == 0) { cout << "Нельзя"; }
+	else {
+		return a / b;
+	}
+}
+
+double summ(double a, double b) {
+	return a + b;
+}
+double multi(double a, double b) {
+	return a * b;
+}
+double dif(double a, double b) {
+	return a - b;
+}
+double divis(double a, double b) {
+	if (b == 0) { cout << "Нельзя"; }
+	else {
+		return a / b;
+	}
+}
+
+int main() {
+	int a, d;
+	double g, t;
+	setlocale(LC_ALL, "Russian");
+	cout << "Введите два целых и два дробных числа" << endl;
+	cin >> a >> d >> g >> t;
+	cout << "Сумма целых =" << summ(a, d) << "  ,дробных =" << summ(g, t) << endl;
+	cout << "Произведение целых =" << multi(a, d) << "  ,дробных =" << multi(g, t) << endl;
+	cout << "Частное целых =" << divis(a, d) << "  ,дробных =" << divis(g, t) << endl;
+	cout << "Разность целых =" << dif(a, d) << "  ,дробных =" << dif(g, t) << endl;
+	system("pause");
+	return 0;
+}
