@@ -1,0 +1,37 @@
+#include "pch.h"
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void summ(float a, float b) {
+	cout << "Сумма чисел = " << (a + b) << endl;
+}
+void dif(float a, float b) {
+	cout << "Сумма чисел = " << (a - b) << endl;
+}
+void div(float a, float b) {
+	if (b == 0) {
+		cout << "Нельзя делить на 0" << endl;
+	}
+	else {
+		cout << "Частное чисел = " << (a / b) << endl;
+	}
+}
+void multi(float a, float b) {
+	cout << "Произведение чисел = " << (a * b) << endl;
+};//Для каждой операции сделана отдельная функция
+
+ int main()
+ {
+                setlocale(LC_ALL, "Russian");
+		float a, b;
+		cout << "Введите два числа:" << endl;
+		cin >> a >> b;
+		summ(a, b);
+		dif(a, b);
+		div(a, b);
+		multi(a, b);
+
+		system("pause");
+		return 0;
+ }
