@@ -1,6 +1,7 @@
 #include "pch.h"
 #include <iostream>
 #include <string>
+#include <Windows.h> 
 using namespace std;
 
 struct Book {
@@ -16,6 +17,8 @@ struct Biblio {
 };
 
 int main() {
+        SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
         setlocale(LC_ALL, "Russian");
 	Biblio bib;
 	cout << "Введите название библиотеки" << endl;
