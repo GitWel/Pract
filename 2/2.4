@@ -4,30 +4,32 @@
 using namespace std;
 
 
- int main()
- {
-	 float a = 4.6, x = -0.7, y, t;
+int main()
+{
+	char comp = 'i';
+	float a = 3.5, x = -0.7, y, t;
 
-	 if (a <= x) {
-		 y = a + log(x + a);
-	 }
-	 else {
-		 y = sqrt(sin(a*x));
-	 }
-	 
-	 if (a == y) {
-		 t = (y / (a - x)) + ((a + x) / (y*y));
-	 }
+	if (a <= x) {
+		y = a + log(x + a);
+	}
+	else {
+		y = sqrt(abs(sin(a*x)));
+	}
 
-	 else if(a < y) {
-		 t = tan(a*x) + cos(2 * a*y);
-	 }
+	if (a == y) {
+		t = (y / (a - x)) + ((a + x) / (y*y));
+	}
 
-	 else {
-		 t = y/(a-x);
-	 }
-	 cout << "a="<< a << endl << "x="<< x << endl<< "y=" << y << endl <<"t="<< t << endl;
+	else if (a < y) {
+		t = tan(a*x) + cos(2 * a*y);
+	}
 
-		system("pause");
-		return 0;
- }
+	else {
+		t = y / (a - x);
+	}
+	cout << comp << " = sqrt(-1)" << endl;
+	cout << "a=" << a << endl << "x=" << x << endl << "y=" << y <<comp<< endl << "t=" << t <<comp<< endl;
+
+	system("pause");
+	return 0;
+}
