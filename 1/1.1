@@ -1,15 +1,18 @@
-#include "pch.h"
-#include <iostream>
-#include <string>
+#include "pch.h" 
+#include <iostream> 
+#include <string> 
+#include <Windows.h> 
+
 using namespace std;
-int main()
-{
-        setlocale(LC_ALL, "Russian");
+
+int main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	setlocale(LC_ALL, "Russian");
 	string name;
-	cout << "Введите свое имя" << endl;
+	cout << "Введите свое имя" << endl; //ввод имени в строковую переменную через поток ввода 
 	cin >> name;
-	cout << "Здравствуйте, " << name << endl;
-	
+	cout << "Здравствуйте, " << name << "!" << endl;  //вывод данной строковой переменной через поток вывода 
 	system("pause");
 	return 0;
 }
