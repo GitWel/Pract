@@ -3,57 +3,50 @@
 #include<ctime>
 using namespace std;
 
-int *sozdan(int size) {                     //созднание массива
-		int *array = new int[size];
-		return array;
-	}
-	int *zapoln(int *array, int size,int a) {      //заполнение массива
-		cout << "Хотите заполнить самостоятельно?(Да-1/Нет-2)" << endl;
-		cin >> a;
-		if (a == 1) {
-			for (int i = 0; i < size; i++) {
-				cin >> array[i];
-			}
-			return array;
-		}
-		else {
-			for (int i = 0; i < size; i++) {
-				array[i]=rand()%10;
-			}
-			return array;
-		}
-	}
-	void vivod(int *array, int size) {            //вывод массива
+int *zapoln(int *array, int size, int a) {    //заполнение массива
+	cout << "Хотите заполнить самостоятельно?(Да-1/Нет-2)" << endl;
+	cin >> a;
+	if (a == 1) {
 		for (int i = 0; i < size; i++) {
-			cout<<"array["<<i<<"] = "<<array[i]<<endl;
-		}
-	}
-
-	int *perem(int *array, int size) {                //перестановка элементов массива
-		for (int i = 1; i < size; i++) {
-			swap(array[i],array[i-1]);
-			i++;
+			cin >> array[i];
 		}
 		return array;
 	}
+	else {
+		for (int i = 0; i < size; i++) {
+			array[i] = rand() % 10;
+		}
+		return array;
+	}
+}
+void vivod(int *array, int size) {    //вывод массива
+	for (int i = 0; i < size; i++) {
+		cout << "array[" << i << "] = " << array[i] << endl;
+	}
+}
+
+int *perem(int *array, int size) {               //перестановка элементов массива
+	for (int i = 1; i < size; i++) {
+		swap(array[i], array[i - 1]);
+		i++;
+	}
+	return array;
+}
 
 
 int main() {
 	srand(time(0));
 	setlocale(LC_ALL, "Russian");
-	int a=0;
+	int a = 0;
 	int size = 12;
-	int *array;
-	array = sozdan(size);
+	int *array=new int[12];
 	cout << "Заполнение массива данными" << endl;
-	array=zapoln(array, size, a);
+	array = zapoln(array, size, a);
 	cout << "Созднанный массив" << endl;
 	vivod(array, size);
 	cout << "Перестановка элементов массива" << endl;
 	array = perem(array, size);
 	vivod(array, size);
-	cout << "Удаление массива" << endl;
-	
 
 	system("pause");
 	return 0;
