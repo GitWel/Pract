@@ -1,0 +1,37 @@
+#include "pch.h"
+#include <iostream>
+using namespace std;
+
+class figura{
+protected:
+	int ugyl;
+	virtual void name() = 0;
+};
+
+class four:public figura {
+public: four() { angle = 4; }
+};
+
+class Romb : four {
+public:
+	int s1;
+	int s2;
+	Romb(int a, int b) {
+		s1 = a;
+		s2 = b;
+	}
+	void name() {
+		cout << "Romb";
+	}
+};
+
+class Rectangle : four {
+public:
+	int s;
+	Rectangle(int a) {
+		s = a;
+	}
+	void name() {
+		cout << "Rectangle";
+	}
+};
